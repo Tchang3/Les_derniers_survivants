@@ -1,0 +1,145 @@
+<!doctype>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title> Les derniers survivants | Jeu multijoueur en ligne </title>
+        <link rel="icon" href="https://trickortreatstudios.com/media/catalog/product/cache/1da4909b8e3ea5eea17a9fb4c6e4a516/d/e/Dead_Head_Prop_Front.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> 
+
+        <!-- Load Vue followed by Vue Router -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+      <div id="centerBar">
+        <div id="app">
+          <main>
+            <router-view
+              :info="info"
+              :items="items"
+              :zombies="zombies"
+              @confirm-register="confirmRegister"
+              @confirm-login="confirmLogin"
+              @change-gear="changeGear"
+              @buy-gear="buyGear"
+              @combat="combat"
+              @find-zombie="findZombie"
+              @revive="revive"
+              @heal="heal"
+              @disconnect="disconnect">
+            </router-view>
+          </main>
+        </div>
+      </div>
+      <script src="/vue-application.js"></script>
+    </body>
+</html>
+<style>
+  html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+  }
+
+  body {
+    background-size:cover;
+    display:flex;
+    font-family: 'Creepster', cursive;
+  }
+
+  p, h1, h2, h3 {
+    color:red;
+  }
+
+  .text {
+    font-size: 25px;
+  }
+
+  #title {
+    font-size:50px;
+    text-shadow: 1px 1px 2px white;
+    margin-top:50px;
+  }
+
+  #subtitle {
+    font-size:35px;
+    opacity:80%;
+    text-shadow: 1px 1px 1px white;
+  }
+
+  #centerBar {
+    height:100%;
+    min-height:1080px;
+    width:70%;
+    text-align: center;
+    margin-left:15%;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0.1%,black,black,black,rgba(0,0,0,0) 99.9%);
+  }
+
+  /*Dispo pour toutes les pages*/
+  .fade-in1 {
+      animation: fadeIn ease 1s;
+      -webkit-animation: fadeIn ease 1s;
+      -moz-animation: fadeIn ease 1s;
+      -o-animation: fadeIn ease 1s;
+      -ms-animation: fadeIn ease 1s;
+  }
+  
+  .fade-in2 {
+      animation: fadeIn ease 2s;
+      -webkit-animation: fadeIn ease 2s;
+      -moz-animation: fadeIn ease 2s;
+      -o-animation: fadeIn ease 2s;
+      -ms-animation: fadeIn ease 2s;
+  }
+
+  .fade-in3 {
+      animation: fadeIn ease 3s;
+      -webkit-animation: fadeIn ease 3s;
+      -moz-animation: fadeIn ease 3s;
+      -o-animation: fadeIn ease 3s;
+      -ms-animation: fadeIn ease 3s;
+  }
+
+  .fade-in4 {
+      animation: fadeIn ease 4s;
+      -webkit-animation: fadeIn ease 4s;
+      -moz-animation: fadeIn ease 4s;
+      -o-animation: fadeIn ease 4s;
+      -ms-animation: fadeIn ease 4s;
+  }
+
+  .fade-in5 {
+      animation: fadeIn ease 5s;
+      -webkit-animation: fadeIn ease 5s;
+      -moz-animation: fadeIn ease 5s;
+      -o-animation: fadeIn ease 5s;
+      -ms-animation: fadeIn ease 5s;
+  }
+  
+  @keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+
+  @-moz-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+
+  @-webkit-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+
+  @-o-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+
+  @-ms-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+</style>
